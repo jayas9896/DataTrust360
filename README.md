@@ -14,6 +14,7 @@ Enterprise-grade, multi-tenant event ingestion and analytics platform.
 - Docker + local Kubernetes for deployment.
 
 See `docs/diagrams.md` for UML and flows.
+See `docs/agile-plan.md` for Agile/Scrum planning.
 
 ## Technology Justification
 
