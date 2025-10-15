@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ingest-rest
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+
+ingest:
+  kafka:
+    topic: dt360.events.raw
+  kinesis:
+    stream: dt360-partner-ingest
+    endpoint: ${KINESIS_ENDPOINT:}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

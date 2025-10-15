@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "datatrust360"
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets:
+          - "auth-gateway:8080"
+          - "ingest-rest:8081"
+          - "ingest-grpc:8082"
+          - "storage-service:8083"
+          - "processing-worker:8084"

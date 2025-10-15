@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: auth-gateway
+  security:
+    oauth2:
+      client:
+        registration:
+          oidc:
+            client-id: change-me
+            client-secret: change-me
+            scope: openid,profile,email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          oidc:
+            issuer-uri: https://issuer.example.com
+    saml2:
+      relyingparty:
+        registration:
+          enterprise-idp:
+            assertingparty:
+              entity-id: https://idp.example.com/entity
+              singlesignon:
+                url: https://idp.example.com/sso
+                binding: POST
+            signing:
+              credentials:
+                - private-key-location: classpath:saml/localhost.key
+                  certificate-location: classpath:saml/localhost.crt
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

@@ -1,0 +1,24 @@
+{
+  "title": "DataTrust360 Ingestion",
+  "time": {"from": "now-6h", "to": "now"},
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "HTTP Request Rate",
+      "targets": [
+        {
+          "expr": "sum(rate(http_server_requests_seconds_count[1m]))"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "JVM Memory Used",
+      "targets": [
+        {
+          "expr": "sum(jvm_memory_used_bytes)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: storage-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dt360
+    username: dt360
+    password: dt360
+  jpa:
+    hibernate:
+      ddl-auto: update
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/dt360
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

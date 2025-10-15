@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storage-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: storage-service
+  template:
+    metadata:
+      labels:
+        app: storage-service
+    spec:
+      containers:
+        - name: storage-service
+          image: datatrust360/storage-service:0.1.0
+          ports:
+            - containerPort: 8083
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/dt360
+            - name: SPRING_DATASOURCE_USERNAME
+              value: dt360
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: dt360
+            - name: SPRING_DATA_MONGODB_URI
+              value: mongodb://mongodb:27017/dt360
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: storage-service
+spec:
+  selector:
+    app: storage-service
+  ports:
+    - port: 8083
+      targetPort: 8083

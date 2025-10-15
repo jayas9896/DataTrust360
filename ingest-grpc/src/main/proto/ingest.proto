@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.datatrust360.ingest.grpc";
+option java_outer_classname = "IngestProto";
+
+message EventPayload {
+  string tenant_id = 1;
+  string source = 2;
+  string schema_version = 3;
+  string received_at = 4;
+  string json_payload = 5;
+}
+
+message IngestBatchRequest {
+  repeated EventPayload events = 1;
+}
+
+message IngestBatchResponse {
+  int32 accepted = 1;
+}
+
+service BulkIngestService {
+  rpc IngestBatch (IngestBatchRequest) returns (IngestBatchResponse);
+}

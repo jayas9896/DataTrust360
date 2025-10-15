@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: ingest-grpc
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+
+grpc:
+  server:
+    port: 9090
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

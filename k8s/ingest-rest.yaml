@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingest-rest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ingest-rest
+  template:
+    metadata:
+      labels:
+        app: ingest-rest
+    spec:
+      containers:
+        - name: ingest-rest
+          image: datatrust360/ingest-rest:0.1.0
+          ports:
+            - containerPort: 8081
+          env:
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: kafka:9092
+            - name: KINESIS_ENDPOINT
+              value: http://localstack:4566
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingest-rest
+spec:
+  selector:
+    app: ingest-rest
+  ports:
+    - port: 8081
+      targetPort: 8081

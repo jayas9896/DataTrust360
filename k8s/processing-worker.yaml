@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: processing-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: processing-worker
+  template:
+    metadata:
+      labels:
+        app: processing-worker
+    spec:
+      containers:
+        - name: processing-worker
+          image: datatrust360/processing-worker:0.1.0
+          ports:
+            - containerPort: 8084
+          env:
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: kafka:9092
+            - name: RABBITMQ_HOST
+              value: rabbitmq
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: processing-worker
+spec:
+  selector:
+    app: processing-worker
+  ports:
+    - port: 8084
+      targetPort: 8084
