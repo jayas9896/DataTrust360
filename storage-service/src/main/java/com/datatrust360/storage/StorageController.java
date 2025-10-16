@@ -13,6 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * REST API for tenant metadata and event payload storage access.
+ *
+ * <p>Importance: Exposes storage operations for admin and operational workflows.</p>
+ * <p>Alternatives: Access repositories directly from other services, but HTTP APIs
+ * enforce boundaries and enable reuse.</p>
+ */
 @RestController
 @RequestMapping("/api/v1/storage")
 @Tag(name = "Storage")
@@ -21,17 +28,35 @@ public class StorageController {
     private final TenantRepository tenantRepository;
     private final EventDocumentRepository eventRepository;
 
+    /**
+     * Creates the storage controller with repository dependencies.
+     *
+     * <p>Importance: Enables clean injection and unit testing of storage endpoints.</p>
+     * <p>Alternatives: Instantiate repositories manually, but DI is standard in Spring.</p>
+     */
     public StorageController(TenantRepository tenantRepository, EventDocumentRepository eventRepository) {
         this.tenantRepository = tenantRepository;
         this.eventRepository = eventRepository;
     }
 
+    /**
+     * Returns all tenants stored in SQL.
+     *
+     * <p>Importance: Enables admin oversight of tenant inventory.</p>
+     * <p>Alternatives: Provide paged endpoints only, but full list is adequate for MVP.</p>
+     */
     @GetMapping("/tenants")
     @Operation(summary = "List tenants stored in SQL")
     public List<Tenant> tenants() {
         return tenantRepository.findAll();
     }
 
+    /**
+     * Creates a tenant stored in SQL.
+     *
+     * <p>Importance: Allows onboarding of new organizations.</p>
+     * <p>Alternatives: Provision tenants via scripts, but APIs enable automation.</p>
+     */
     @PostMapping("/tenants")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Create tenant stored in SQL")
@@ -39,6 +64,12 @@ public class StorageController {
         return tenantRepository.save(tenant);
     }
 
+    /**
+     * Retrieves a single event payload document by ID.
+     *
+     * <p>Importance: Supports investigation and forensic analysis of raw events.</p>
+     * <p>Alternatives: Search by filters only, but direct ID retrieval is faster for drill-downs.</p>
+     */
     @GetMapping("/events/{id}")
     @Operation(summary = "Get event payload from NoSQL")
     public EventDocument eventById(@PathVariable String id) {

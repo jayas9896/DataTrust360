@@ -9,9 +9,21 @@ import software.amazon.awssdk.services.kinesis.KinesisClientBuilder;
 
 import java.net.URI;
 
+/**
+ * Configuration for ingestion dependencies like the Kinesis client.
+ *
+ * <p>Importance: Centralizes AWS client configuration for consistency across environments.</p>
+ * <p>Alternatives: Build clients ad hoc in services, but that scatters configuration.</p>
+ */
 @Configuration
 public class IngestConfig {
 
+    /**
+     * Creates a Kinesis client with optional endpoint override.
+     *
+     * <p>Importance: Supports LocalStack endpoints for local development.</p>
+     * <p>Alternatives: Use default AWS endpoints only, but that blocks local testing.</p>
+     */
     @Bean
     public KinesisClient kinesisClient(@Value("${ingest.kinesis.endpoint:}") String endpoint) {
         KinesisClientBuilder builder = KinesisClient.builder()

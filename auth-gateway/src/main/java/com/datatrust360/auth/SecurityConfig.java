@@ -10,10 +10,23 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Security configuration for public endpoints, RBAC, OAuth2 login, and SAML SSO.
+ *
+ * <p>Importance: Centralized security policy ensures consistent enforcement across routes.</p>
+ * <p>Alternatives: Configure security per controller, but that increases drift and risk.</p>
+ */
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
 
+    /**
+     * Builds the HTTP security filter chain for authentication and authorization.
+     *
+     * <p>Importance: Establishes public routes and secure access for the gateway.</p>
+     * <p>Alternatives: Use default security auto-configuration, but explicit rules
+     * are required for public access and multiple auth mechanisms.</p>
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -29,6 +42,13 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * Provides a simple in-memory user store for local RBAC validation.
+     *
+     * <p>Importance: Enables quick verification of ADMIN and VIEWER role enforcement.</p>
+     * <p>Alternatives: Back with database or LDAP, but in-memory users are sufficient
+     * for local development and test scaffolding.</p>
+     */
     @Bean
     public UserDetailsService userDetailsService() {
         return new InMemoryUserDetailsManager(
