@@ -1,0 +1,27 @@
+# Commit Log (Learning Notes)
+
+This log explains each commit in sequence: why it was done, what it added, and why that order was chosen.
+
+## 80c6b4b - Initialize DataTrust360 multi-module scaffold
+
+- Why: Establish a realistic enterprise-grade baseline to anchor all subsequent features and learning tasks.
+- What: Added multi-module Maven structure, core services, security placeholders, ingestion pipelines, storage models, docs/UML, tests, Docker/K8s, and observability assets.
+- Order/Priority: Scaffold first to create a stable backbone for all later security, pipeline, and infra work. Starting with structure reduces rework when adding deeper features.
+
+## 97c5b3d - Add Agile/Scrum plan doc
+
+- Why: Capture delivery structure and team cadence early, mirroring real enterprise planning.
+- What: Added Agile/Scrum plan doc and linked it from the README.
+- Order/Priority: After baseline scaffold, planning docs make sense because the architecture exists to drive realistic epics and stories.
+
+## 8f0cf30 - Add mandatory Javadoc across codebase
+
+- Why: Enforce strong documentation habits and make code self-explanatory for interview readiness.
+- What: Added Javadocs to all Java classes/methods and codified the policy in coding standards.
+- Order/Priority: Applied after core code was in place to avoid duplicating docs while the skeleton was still moving.
+
+## 984acad - Enforce mandatory Javadoc via Checkstyle
+
+- Why: Prevent regressions and ensure documentation stays mandatory.
+- What: Added Checkstyle configuration and Maven enforcement during validate.
+- Order/Priority: Enforcement only makes sense after the codebase already complies, so it followed the Javadoc update.
