@@ -41,3 +41,19 @@ This log explains each commit in sequence: why it was done, what it added, and w
 - How: Wrote the log entries and linked it from the README for visibility.
 - Order/Priority: Added after core and documentation policies to reflect the existing commit history.
 - Details: [docs/change-log-detailed/1109f80.md](change-log-detailed/1109f80.md)
+
+## 5531777 - Add detailed per-commit change logs
+
+- Why: Provide deeper, interview-ready explanations for each commit beyond the main summary.
+- What: Added per-commit detailed docs and expanded the main commit log with How/Details.
+- How: Created `docs/change-log-detailed/` files for prior commits and linked them from the main log.
+- Order/Priority: Added after the base commit log existed to avoid documenting a log that did not yet exist.
+- Details: [docs/change-log-detailed/5531777.md](change-log-detailed/5531777.md)
+
+## 3474301 - Add navigation links between commit logs
+
+- Why: Improve discoverability by making navigation between summary and detailed logs frictionless.
+- What: Added cross-links in the main log and back-links in detailed files.
+- How: Converted plain paths to clickable links and standardized back references.
+- Order/Priority: Added after detailed logs existed so linking targets were stable.
+- Details: [docs/change-log-detailed/3474301.md](change-log-detailed/3474301.md)
