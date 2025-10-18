@@ -1,6 +1,6 @@
 # Detailed Change Log: 984acad
 
-Back to main log: ../commit-log.md
+Back to main log: [docs/commit-log.md](../commit-log.md)
 
 ## Commit Summary
 Enforce mandatory Javadoc via Checkstyle.
