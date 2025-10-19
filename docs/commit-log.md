@@ -57,3 +57,11 @@ This log explains each commit in sequence: why it was done, what it added, and w
 - How: Converted plain paths to clickable links and standardized back references.
 - Order/Priority: Added after detailed logs existed so linking targets were stable.
 - Details: [docs/change-log-detailed/3474301.md](change-log-detailed/3474301.md)
+
+## aa4a293 - Add .git-keep files for empty directories
+
+- Why: Preserve intended repository structure for empty folders and keep learning docs complete.
+- What: Added `.git-keep` files to empty directories and backfilled missing detailed logs.
+- How: Detected empty folders, added `.git-keep`, and created detailed log entries for recent commits.
+- Order/Priority: Filled missing documentation first, then preserved structure to prevent future drift.
+- Details: [docs/change-log-detailed/aa4a293.md](change-log-detailed/aa4a293.md)
