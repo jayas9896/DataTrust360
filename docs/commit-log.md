@@ -90,10 +90,18 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - Order/Priority: Applied after previous entries were complete to minimize rewrite churn.
 - Details: [docs/change-log-detailed/CL-0011.md](change-log-detailed/CL-0011.md)
 
-## CL-0012 - Restore detailed logs after ID migration
+## CL-0012 - Attempt to restore detailed logs after ID migration
+
+- Why: Repair missing detailed files after the ID migration.
+- What: Updated the main log and attempted to regenerate detailed logs.
+- How: Regenerated the main log and re-ran the log generation step.
+- Order/Priority: Attempted immediately after the migration to keep links working.
+- Details: [docs/change-log-detailed/CL-0012.md](change-log-detailed/CL-0012.md)
+
+## CL-0013 - Restore detailed logs after ID migration
 
 - Why: Ensure the detailed log directory is populated after the sequential ID switch.
 - What: Recreated all detailed log files with the new CL- naming scheme.
 - How: Regenerated the detailed log templates and confirmed link targets exist.
-- Order/Priority: Fixed immediately after the ID migration to prevent broken navigation.
-- Details: [docs/change-log-detailed/CL-0012.md](change-log-detailed/CL-0012.md)
+- Order/Priority: Fixed immediately after the failed attempt to prevent broken navigation.
+- Details: [docs/change-log-detailed/CL-0013.md](change-log-detailed/CL-0013.md)
