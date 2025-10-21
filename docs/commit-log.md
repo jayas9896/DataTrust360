@@ -121,3 +121,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Appended the new entry and created its detailed counterpart.
 - Order/Priority: Documented immediately so the sequence remains continuous.
 - Details: [docs/change-log-detailed/CL-0015.md](change-log-detailed/CL-0015.md)
+
+## CL-0016 - Require commit log templates for future commits
+
+- Why: Ensure consistent, interview-ready documentation for every change.
+- What: Added a mandatory commit log template to coding standards.
+- How: Documented the required format in `docs/coding-standards.md`.
+- Order/Priority: Applied after switching to sequential IDs so the format is stable.
+- Details: [docs/change-log-detailed/CL-0016.md](change-log-detailed/CL-0016.md)
