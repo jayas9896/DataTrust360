@@ -105,3 +105,19 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Regenerated the detailed log templates and confirmed link targets exist.
 - Order/Priority: Fixed immediately after the failed attempt to prevent broken navigation.
 - Details: [docs/change-log-detailed/CL-0013.md](change-log-detailed/CL-0013.md)
+
+## CL-0014 - Update sequential log entries
+
+- Why: Align the log sequence after the ID migration fixes.
+- What: Added missing entries to cover recent log adjustments.
+- How: Appended new sequential entries and refreshed detailed files.
+- Order/Priority: Applied after log restoration to keep ordering consistent.
+- Details: [docs/change-log-detailed/CL-0014.md](change-log-detailed/CL-0014.md)
+
+## CL-0015 - Record log update for CL-0014
+
+- Why: Keep the learning log current without leaving gaps after an entry update.
+- What: Added the entry and detailed file describing the log alignment work.
+- How: Appended the new entry and created its detailed counterpart.
+- Order/Priority: Documented immediately so the sequence remains continuous.
+- Details: [docs/change-log-detailed/CL-0015.md](change-log-detailed/CL-0015.md)
