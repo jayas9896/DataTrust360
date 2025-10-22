@@ -4,7 +4,6 @@ import com.datatrust360.common.EventEnvelope;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -19,20 +18,24 @@ public class StreamIngestListener {
 
     private static final Logger logger = LoggerFactory.getLogger(StreamIngestListener.class);
 
-    private final RabbitTemplate rabbitTemplate;
     private final ObjectMapper objectMapper;
     private final StorageClient storageClient;
+    private final PartnerQueuePublisher queuePublisher;
 
     /**
-     * Creates the listener with RabbitMQ publishing dependency.
+     * Creates the listener with storage and queue publishing dependencies.
      *
-     * <p>Importance: Enables queueing of async jobs from streaming events.</p>
-     * <p>Alternatives: Use direct service calls, but queues improve resilience.</p>
+     * <p>Importance: Ensures events are persisted and queued with a single responsibility boundary.</p>
+     * <p>Alternatives: Publish directly from Kafka listener, but separate publisher improves reuse.</p>
      */
-    public StreamIngestListener(RabbitTemplate rabbitTemplate, ObjectMapper objectMapper, StorageClient storageClient) {
-        this.rabbitTemplate = rabbitTemplate;
+    public StreamIngestListener(
+        ObjectMapper objectMapper,
+        StorageClient storageClient,
+        PartnerQueuePublisher queuePublisher
+    ) {
         this.objectMapper = objectMapper;
         this.storageClient = storageClient;
+        this.queuePublisher = queuePublisher;
     }
 
     /**
@@ -45,7 +48,7 @@ public class StreamIngestListener {
     public void onEvent(String payload) {
         EventEnvelope envelope = parseEnvelope(payload);
         storageClient.persistEvent(envelope);
-        rabbitTemplate.convertAndSend(RabbitConfig.ANOMALY_QUEUE, payload);
+        queuePublisher.enqueue(payload);
     }
 
     /**

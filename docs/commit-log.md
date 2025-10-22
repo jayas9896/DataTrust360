@@ -137,3 +137,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Added a storage client and REST endpoint, mapped envelopes to documents, and wired config for service URL.
 - Order/Priority: Implemented after pipeline scaffolding to connect ingestion to durable storage.
 - Details: [docs/change-log-detailed/CL-0017.md](change-log-detailed/CL-0017.md)
+
+## CL-0018 - Add Kinesis polling for partner ingestion
+
+- Why: Process partner/edge ingestion events separately from Kafka while reusing the same scoring pipeline.
+- What: Added a Kinesis poller in the processing worker, config wiring, and queue publisher reuse.
+- How: Introduced a scheduled poller, Kinesis client config, and shared queue publisher for scoring.
+- Order/Priority: Implemented after storage persistence to ensure partner events are durable before scoring.
+- Details: [docs/change-log-detailed/CL-0018.md](change-log-detailed/CL-0018.md)

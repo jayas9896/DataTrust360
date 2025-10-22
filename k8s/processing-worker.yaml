@@ -24,6 +24,10 @@ spec:
               value: rabbitmq
             - name: STORAGE_SERVICE_URL
               value: http://storage-service:8083
+            - name: KINESIS_ENDPOINT
+              value: http://localstack:4566
+            - name: KINESIS_STREAM
+              value: dt360-partner-ingest
 ---
 apiVersion: v1
 kind: Service
