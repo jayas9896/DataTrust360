@@ -8,6 +8,9 @@ spring:
     port: ${RABBITMQ_PORT:5672}
 server:
   port: 8084
+processing:
+  storage:
+    base-url: ${STORAGE_SERVICE_URL:http://localhost:8083}
 
 management:
   endpoints:

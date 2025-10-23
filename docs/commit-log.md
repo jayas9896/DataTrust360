@@ -129,3 +129,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Documented the required format in `docs/coding-standards.md`.
 - Order/Priority: Applied after switching to sequential IDs so the format is stable.
 - Details: [docs/change-log-detailed/CL-0016.md](change-log-detailed/CL-0016.md)
+
+## CL-0017 - Persist ingested events to storage service
+
+- Why: Preserve raw events for forensics and downstream analytics while keeping ingestion decoupled.
+- What: Added storage persistence from processing worker and a storage API endpoint to accept events.
+- How: Added a storage client and REST endpoint, mapped envelopes to documents, and wired config for service URL.
+- Order/Priority: Implemented after pipeline scaffolding to connect ingestion to durable storage.
+- Details: [docs/change-log-detailed/CL-0017.md](change-log-detailed/CL-0017.md)

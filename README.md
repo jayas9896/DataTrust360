@@ -54,6 +54,7 @@ See `docs/commit-log.md` for sequential commit learning notes.
 - `POST /api/v1/events` -> Kafka topic `dt360.events.raw`
 - `POST /api/v1/partners/events` -> Kinesis stream `dt360-partner-ingest`
 - `GET /api/v1/storage/tenants`
+- `POST /api/v1/storage/events`
 
 Swagger UI:
 

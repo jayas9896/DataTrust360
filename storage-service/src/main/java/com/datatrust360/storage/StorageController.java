@@ -1,5 +1,6 @@
 package com.datatrust360.storage;
 
+import com.datatrust360.common.EventEnvelope;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -65,6 +66,19 @@ public class StorageController {
     }
 
     /**
+     * Persists an event payload into NoSQL storage.
+     *
+     * <p>Importance: Retains raw events for investigation and downstream analytics.</p>
+     * <p>Alternatives: Store only aggregated results, but raw payloads are critical for forensics.</p>
+     */
+    @PostMapping("/events")
+    @ResponseStatus(HttpStatus.CREATED)
+    @Operation(summary = "Store event payload in NoSQL")
+    public EventDocument createEvent(@RequestBody EventEnvelope envelope) {
+        return eventRepository.save(toDocument(envelope));
+    }
+
+    /**
      * Retrieves a single event payload document by ID.
      *
      * <p>Importance: Supports investigation and forensic analysis of raw events.</p>
@@ -74,5 +88,21 @@ public class StorageController {
     @Operation(summary = "Get event payload from NoSQL")
     public EventDocument eventById(@PathVariable String id) {
         return eventRepository.findById(id).orElseThrow();
+    }
+
+    /**
+     * Maps an event envelope into a MongoDB document.
+     *
+     * <p>Importance: Keeps a single mapping definition for storage consistency.</p>
+     * <p>Alternatives: Inline mapping per endpoint, but that duplicates logic.</p>
+     */
+    private EventDocument toDocument(EventEnvelope envelope) {
+        EventDocument document = new EventDocument();
+        document.setTenantId(envelope.getTenantId());
+        document.setSource(envelope.getSource());
+        document.setSchemaVersion(envelope.getSchemaVersion());
+        document.setReceivedAt(envelope.getReceivedAt());
+        document.setPayload(envelope.getPayload());
+        return document;
     }
 }

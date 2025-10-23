@@ -22,6 +22,8 @@ spec:
               value: kafka:9092
             - name: RABBITMQ_HOST
               value: rabbitmq
+            - name: STORAGE_SERVICE_URL
+              value: http://storage-service:8083
 ---
 apiVersion: v1
 kind: Service
