@@ -153,3 +153,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Introduced OpenAI service, audit DTO, audit repository, and storage API wiring.
 - Order/Priority: Implemented after storage persistence so insights can be stored centrally.
 - Details: [docs/change-log-detailed/CL-0019.md](change-log-detailed/CL-0019.md)
+
+## CL-0020 - Attribute insights to tenant IDs
+
+- Why: Ensure audit logs and insights are correctly tied to tenant context.
+- What: Parse tenant IDs from payloads before generating insights.
+- How: Added payload parsing in the scoring worker and defaulted safely on failures.
+- Order/Priority: Implemented after OpenAI integration to improve audit quality.
+- Details: [docs/change-log-detailed/CL-0020.md](change-log-detailed/CL-0020.md)
