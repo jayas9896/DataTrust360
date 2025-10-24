@@ -158,6 +158,7 @@ kubectl apply -f k8s/
 
 - Worker can call OpenAI after anomaly scoring to generate natural language insights.
 - Suggested flow in `docs/insights.md`.
+- Configure `OPENAI_API_KEY` and enable with `OPENAI_ENABLED=true`.
 
 ## Tests
 

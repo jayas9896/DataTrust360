@@ -22,6 +22,7 @@ public class AuditLog {
     private String actor;
     private String action;
     private Instant occurredAt;
+    private String details;
 
     /**
      * Returns the audit log primary key.
@@ -97,4 +98,20 @@ public class AuditLog {
      * <p>Alternatives: Populate on write, but caller-provided time supports external events.</p>
      */
     public void setOccurredAt(Instant occurredAt) { this.occurredAt = occurredAt; }
+
+    /**
+     * Returns additional details for this audit event.
+     *
+     * <p>Importance: Preserves generated insights or context for later review.</p>
+     * <p>Alternatives: Store details separately, but a single record keeps audits self-contained.</p>
+     */
+    public String getDetails() { return details; }
+
+    /**
+     * Sets additional details for this audit event.
+     *
+     * <p>Importance: Keeps audit logs useful for investigations.</p>
+     * <p>Alternatives: Omit details, but that reduces forensic value.</p>
+     */
+    public void setDetails(String details) { this.details = details; }
 }

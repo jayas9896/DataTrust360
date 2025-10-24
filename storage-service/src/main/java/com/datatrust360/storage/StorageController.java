@@ -1,5 +1,6 @@
 package com.datatrust360.storage;
 
+import com.datatrust360.common.AuditLogRequest;
 import com.datatrust360.common.EventEnvelope;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -28,6 +29,7 @@ public class StorageController {
 
     private final TenantRepository tenantRepository;
     private final EventDocumentRepository eventRepository;
+    private final AuditLogRepository auditLogRepository;
 
     /**
      * Creates the storage controller with repository dependencies.
@@ -35,9 +37,14 @@ public class StorageController {
      * <p>Importance: Enables clean injection and unit testing of storage endpoints.</p>
      * <p>Alternatives: Instantiate repositories manually, but DI is standard in Spring.</p>
      */
-    public StorageController(TenantRepository tenantRepository, EventDocumentRepository eventRepository) {
+    public StorageController(
+        TenantRepository tenantRepository,
+        EventDocumentRepository eventRepository,
+        AuditLogRepository auditLogRepository
+    ) {
         this.tenantRepository = tenantRepository;
         this.eventRepository = eventRepository;
+        this.auditLogRepository = auditLogRepository;
     }
 
     /**
@@ -79,6 +86,19 @@ public class StorageController {
     }
 
     /**
+     * Persists an audit log entry to SQL.
+     *
+     * <p>Importance: Captures security and insight events for compliance reporting.</p>
+     * <p>Alternatives: Log only to files, but persisted audit logs are queryable.</p>
+     */
+    @PostMapping("/audit")
+    @ResponseStatus(HttpStatus.CREATED)
+    @Operation(summary = "Create audit log entry in SQL")
+    public AuditLog createAudit(@RequestBody AuditLogRequest request) {
+        return auditLogRepository.save(toAuditLog(request));
+    }
+
+    /**
      * Retrieves a single event payload document by ID.
      *
      * <p>Importance: Supports investigation and forensic analysis of raw events.</p>
@@ -104,5 +124,34 @@ public class StorageController {
         document.setReceivedAt(envelope.getReceivedAt());
         document.setPayload(envelope.getPayload());
         return document;
+    }
+
+    /**
+     * Maps an audit request into a persistent audit log entity.
+     *
+     * <p>Importance: Ensures consistent audit record creation across endpoints.</p>
+     * <p>Alternatives: Inline mapping per request, but a dedicated method improves reuse.</p>
+     */
+    private AuditLog toAuditLog(AuditLogRequest request) {
+        AuditLog log = new AuditLog();
+        log.setTenantId(parseTenantId(request.getTenantId()));
+        log.setActor(request.getActor());
+        log.setAction(request.getAction());
+        log.setOccurredAt(request.getOccurredAt());
+        log.setDetails(request.getDetails());
+        return log;
+    }
+
+    /**
+     * Parses a tenant ID string into a numeric value.
+     *
+     * <p>Importance: Aligns audit log storage with SQL numeric tenant keys.</p>
+     * <p>Alternatives: Store tenant IDs as strings, but numeric IDs align with existing schema.</p>
+     */
+    private Long parseTenantId(String tenantId) {
+        if (tenantId == null || tenantId.isBlank()) {
+            return null;
+        }
+        return Long.parseLong(tenantId);
     }
 }

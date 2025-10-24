@@ -47,4 +47,21 @@ public class ProcessingConfig {
         }
         return builder.build();
     }
+
+    /**
+     * Builds a RestClient for OpenAI API calls.
+     *
+     * <p>Importance: Centralizes external AI configuration and auth.</p>
+     * <p>Alternatives: Use per-call headers, but a configured client reduces duplication.</p>
+     */
+    @Bean
+    public RestClient openAiRestClient(
+        @Value("${processing.openai.base-url:https://api.openai.com}") String baseUrl,
+        @Value("${processing.openai.api-key:}") String apiKey
+    ) {
+        return RestClient.builder()
+            .baseUrl(baseUrl)
+            .defaultHeader("Authorization", "Bearer " + apiKey)
+            .build();
+    }
 }

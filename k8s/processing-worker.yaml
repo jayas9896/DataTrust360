@@ -28,6 +28,10 @@ spec:
               value: http://localstack:4566
             - name: KINESIS_STREAM
               value: dt360-partner-ingest
+            - name: OPENAI_API_KEY
+              value: change-me
+            - name: OPENAI_ENABLED
+              value: "false"
 ---
 apiVersion: v1
 kind: Service

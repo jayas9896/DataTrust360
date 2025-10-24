@@ -1,5 +1,6 @@
 package com.datatrust360.processing;
 
+import com.datatrust360.common.AuditLogRequest;
 import com.datatrust360.common.EventEnvelope;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -35,6 +36,20 @@ public class StorageClient {
         restClient.post()
             .uri("/api/v1/storage/events")
             .body(envelope)
+            .retrieve()
+            .toBodilessEntity();
+    }
+
+    /**
+     * Persists an audit log entry in the storage service.
+     *
+     * <p>Importance: Records insights and security-relevant events for compliance.</p>
+     * <p>Alternatives: Store audits locally, but centralized storage enables reporting.</p>
+     */
+    public void persistAudit(AuditLogRequest request) {
+        restClient.post()
+            .uri("/api/v1/storage/audit")
+            .body(request)
             .retrieve()
             .toBodilessEntity();
     }

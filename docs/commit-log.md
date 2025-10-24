@@ -145,3 +145,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Introduced a scheduled poller, Kinesis client config, and shared queue publisher for scoring.
 - Order/Priority: Implemented after storage persistence to ensure partner events are durable before scoring.
 - Details: [docs/change-log-detailed/CL-0018.md](change-log-detailed/CL-0018.md)
+
+## CL-0019 - Add OpenAI insights and audit logging
+
+- Why: Provide natural language summaries for anomaly events and capture them for compliance.
+- What: Added OpenAI client integration, audit log endpoint, and storage of insights.
+- How: Introduced OpenAI service, audit DTO, audit repository, and storage API wiring.
+- Order/Priority: Implemented after storage persistence so insights can be stored centrally.
+- Details: [docs/change-log-detailed/CL-0019.md](change-log-detailed/CL-0019.md)
