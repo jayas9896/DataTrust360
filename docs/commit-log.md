@@ -169,3 +169,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Reused existing parsing, storage persistence, and queueing logic.
 - Order/Priority: Added after storage and insight integration to reuse the mature pipeline path.
 - Details: [docs/change-log-detailed/CL-0021.md](change-log-detailed/CL-0021.md)
+
+## CL-0022 - Add API usage examples
+
+- Why: Provide interview-ready, runnable examples for key endpoints and gRPC calls.
+- What: Added a dedicated API examples doc and linked it from the README.
+- How: Documented curl and grpcurl samples for REST, partner ingest, gRPC, and storage APIs.
+- Order/Priority: Added after core endpoints stabilized to avoid churn in examples.
+- Details: [docs/change-log-detailed/CL-0022.md](change-log-detailed/CL-0022.md)
