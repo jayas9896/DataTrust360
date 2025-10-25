@@ -161,3 +161,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Added payload parsing in the scoring worker and defaulted safely on failures.
 - Order/Priority: Implemented after OpenAI integration to improve audit quality.
 - Details: [docs/change-log-detailed/CL-0020.md](change-log-detailed/CL-0020.md)
+
+## CL-0021 - Process bulk Kafka events in worker
+
+- Why: Ensure gRPC bulk ingestion is processed through the same pipeline as REST events.
+- What: Added a Kafka listener for the bulk topic and updated pipeline docs.
+- How: Reused existing parsing, storage persistence, and queueing logic.
+- Order/Priority: Added after storage and insight integration to reuse the mature pipeline path.
+- Details: [docs/change-log-detailed/CL-0021.md](change-log-detailed/CL-0021.md)

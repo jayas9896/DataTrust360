@@ -75,7 +75,7 @@ service BulkIngestService {
 
 - Kafka topics: `dt360.events.raw`, `dt360.events.bulk`
 - Kinesis stream: `dt360-partner-ingest`
-- Worker consumes Kafka events and polls Kinesis for partner events, then fans out to RabbitMQ queue `dt360.anomaly.scoring`
+- Worker consumes raw and bulk Kafka events and polls Kinesis for partner events, then fans out to RabbitMQ queue `dt360.anomaly.scoring`
 
 ## RabbitMQ Job Processing
 

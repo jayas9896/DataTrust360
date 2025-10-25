@@ -52,6 +52,19 @@ public class StreamIngestListener {
     }
 
     /**
+     * Receives bulk events from Kafka and enqueues scoring jobs.
+     *
+     * <p>Importance: Ensures gRPC bulk ingestion flows through the same processing pipeline.</p>
+     * <p>Alternatives: Use a separate worker, but shared processing simplifies operations.</p>
+     */
+    @KafkaListener(topics = "dt360.events.bulk", groupId = "processing-worker")
+    public void onBulkEvent(String payload) {
+        EventEnvelope envelope = parseEnvelope(payload);
+        storageClient.persistEvent(envelope);
+        queuePublisher.enqueue(payload);
+    }
+
+    /**
      * Parses raw JSON into an EventEnvelope.
      *
      * <p>Importance: Enables storage persistence and downstream processing using a normalized model.</p>
