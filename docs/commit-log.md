@@ -185,3 +185,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Documented unit, integration, contract, and observability test layers.
 - Order/Priority: Added after API examples to align tests with documented usage.
 - Details: [docs/change-log-detailed/CL-0023.md](change-log-detailed/CL-0023.md)
+
+## CL-0024 - Add Kubernetes dependencies manifest
+
+- Why: Enable local Kubernetes deployments with required data and messaging services.
+- What: Added a dependencies manifest and namespaced all app resources.
+- How: Created deployments/services for Kafka, Zookeeper, Postgres, MongoDB, RabbitMQ, and LocalStack.
+- Order/Priority: Added after app manifests so dependencies align with service expectations.
+- Details: [docs/change-log-detailed/CL-0024.md](change-log-detailed/CL-0024.md)
