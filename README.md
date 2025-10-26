@@ -18,6 +18,7 @@ See `docs/agile-plan.md` for Agile/Scrum planning.
 See `docs/coding-standards.md` for the mandatory Javadoc policy.
 See `docs/commit-log.md` for sequential commit learning notes.
 See `docs/api-examples.md` for REST and gRPC usage examples.
+See `docs/testing.md` for the testing strategy.
 
 ## Technology Justification
 

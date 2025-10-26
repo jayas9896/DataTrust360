@@ -177,3 +177,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Documented curl and grpcurl samples for REST, partner ingest, gRPC, and storage APIs.
 - Order/Priority: Added after core endpoints stabilized to avoid churn in examples.
 - Details: [docs/change-log-detailed/CL-0022.md](change-log-detailed/CL-0022.md)
+
+## CL-0023 - Add testing strategy doc
+
+- Why: Capture an enterprise-grade testing approach for interviews and execution.
+- What: Added a testing strategy document and linked it from the README.
+- How: Documented unit, integration, contract, and observability test layers.
+- Order/Priority: Added after API examples to align tests with documented usage.
+- Details: [docs/change-log-detailed/CL-0023.md](change-log-detailed/CL-0023.md)
