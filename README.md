@@ -158,6 +158,12 @@ kubectl apply -f k8s/
 kubectl apply -f k8s/observability.yaml
 ```
 
+Initialize LocalStack Kinesis:
+
+```
+powershell -ExecutionPolicy Bypass -File scripts/init-localstack.ps1
+```
+
 ## OpenAI Insights (Optional)
 
 - Worker can call OpenAI after anomaly scoring to generate natural language insights.

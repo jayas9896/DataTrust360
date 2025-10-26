@@ -201,3 +201,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Defined ConfigMap-based Prometheus config and Grafana deployment in the namespace.
 - Order/Priority: Added after dependencies to ensure targets exist before scraping.
 - Details: [docs/change-log-detailed/CL-0025.md](change-log-detailed/CL-0025.md)
+
+## CL-0026 - Add LocalStack init script
+
+- Why: Ensure the Kinesis stream exists for partner ingestion during local development.
+- What: Added a script to create the LocalStack Kinesis stream and documented its use.
+- How: Created a PowerShell script that calls AWS CLI against LocalStack.
+- Order/Priority: Added after Kinesis polling so local setup supports the pipeline.
+- Details: [docs/change-log-detailed/CL-0026.md](change-log-detailed/CL-0026.md)
