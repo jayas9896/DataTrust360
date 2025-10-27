@@ -193,3 +193,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Created deployments/services for Kafka, Zookeeper, Postgres, MongoDB, RabbitMQ, and LocalStack.
 - Order/Priority: Added after app manifests so dependencies align with service expectations.
 - Details: [docs/change-log-detailed/CL-0024.md](change-log-detailed/CL-0024.md)
+
+## CL-0025 - Add Kubernetes observability manifests
+
+- Why: Provide in-cluster Prometheus and Grafana for local Kubernetes monitoring.
+- What: Added observability deployments, services, and Prometheus config.
+- How: Defined ConfigMap-based Prometheus config and Grafana deployment in the namespace.
+- Order/Priority: Added after dependencies to ensure targets exist before scraping.
+- Details: [docs/change-log-detailed/CL-0025.md](change-log-detailed/CL-0025.md)

@@ -155,6 +155,7 @@ Run local Kubernetes:
 ```
 kubectl apply -f k8s/dependencies.yaml
 kubectl apply -f k8s/
+kubectl apply -f k8s/observability.yaml
 ```
 
 ## OpenAI Insights (Optional)
