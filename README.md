@@ -19,6 +19,7 @@ See `docs/coding-standards.md` for the mandatory Javadoc policy.
 See `docs/commit-log.md` for sequential commit learning notes.
 See `docs/api-examples.md` for REST and gRPC usage examples.
 See `docs/testing.md` for the testing strategy.
+See `docs/demo.md` for demo scenarios.
 
 ## Technology Justification
 

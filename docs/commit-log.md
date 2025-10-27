@@ -217,3 +217,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Verified tenant parsing in the worker and audit ID parsing in the storage controller.
 - Order/Priority: Added after the related features to lock in expected behavior.
 - Details: [docs/change-log-detailed/CL-0027.md](change-log-detailed/CL-0027.md)
+
+## CL-0028 - Add demo scenarios doc
+
+- Why: Provide runnable end-to-end scenarios for interview demonstrations.
+- What: Added a demo scenarios document and linked it from the README.
+- How: Documented step-by-step flows for REST, gRPC, Kinesis, and observability.
+- Order/Priority: Added after APIs and infrastructure steps were documented.
+- Details: [docs/change-log-detailed/CL-0028.md](change-log-detailed/CL-0028.md)
