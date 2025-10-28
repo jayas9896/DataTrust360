@@ -209,3 +209,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Created a PowerShell script that calls AWS CLI against LocalStack.
 - Order/Priority: Added after Kinesis polling so local setup supports the pipeline.
 - Details: [docs/change-log-detailed/CL-0026.md](change-log-detailed/CL-0026.md)
+
+## CL-0027 - Add unit tests for insight and audit mapping
+
+- Why: Validate tenant attribution and audit mapping logic for interview-ready quality.
+- What: Added unit tests for anomaly scoring insight attribution and audit log mapping.
+- How: Verified tenant parsing in the worker and audit ID parsing in the storage controller.
+- Order/Priority: Added after the related features to lock in expected behavior.
+- Details: [docs/change-log-detailed/CL-0027.md](change-log-detailed/CL-0027.md)
