@@ -3,7 +3,7 @@
 1) `processing-worker` evaluates anomaly score from payload.
 2) If threshold exceeded, it sends a summary to OpenAI.
 3) OpenAI returns natural language insights for analysts.
-4) Insights are stored in SQL audit logs or NoSQL metadata.
+4) Insights are stored in SQL audit logs via `POST /api/v1/storage/audit`.
 
 ## Prompt Sketch
 
@@ -14,4 +14,5 @@ User: Summarize anomalies for tenant {{tenantId}} from {{source}}. Event: {{payl
 
 - Use a low-latency model for near-real-time insights.
 - Cache previous summaries to reduce cost.
-- Store responses in `audit_log` as `action = 'INSIGHT'`.
+- Store responses in `audit_log` as `action = 'INSIGHT_CREATED'`.
+- Configure `OPENAI_API_KEY` and enable with `OPENAI_ENABLED=true`.

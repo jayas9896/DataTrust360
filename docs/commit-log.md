@@ -233,3 +233,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Updated UML class diagram and SQL schema snippet in README.
 - Order/Priority: Added after audit logging implementation to prevent doc drift.
 - Details: [docs/change-log-detailed/CL-0029.md](change-log-detailed/CL-0029.md)
+
+## CL-0030 - Update OpenAI insight documentation
+
+- Why: Keep insight docs aligned with the audit logging and configuration flow.
+- What: Updated insight storage and configuration notes.
+- How: Added audit endpoint reference and updated action name and config hints.
+- Order/Priority: Updated after OpenAI integration and audit endpoint were added.
+- Details: [docs/change-log-detailed/CL-0030.md](change-log-detailed/CL-0030.md)
