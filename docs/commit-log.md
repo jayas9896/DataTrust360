@@ -249,3 +249,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Documented Docker Compose, Kubernetes steps, and troubleshooting tips.
 - Order/Priority: Added after demo scenarios so operational guidance is aligned with usage.
 - Details: [docs/change-log-detailed/CL-0031.md](change-log-detailed/CL-0031.md)
+
+## CL-0032 - Add security overview doc
+
+- Why: Summarize authentication and authorization flows for interview discussions.
+- What: Added a security overview document and linked it from the README.
+- How: Documented public access, RBAC, OAuth2, SAML, and resource server notes.
+- Order/Priority: Added after core security configuration was in place.
+- Details: [docs/change-log-detailed/CL-0032.md](change-log-detailed/CL-0032.md)

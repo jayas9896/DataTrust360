@@ -21,6 +21,7 @@ See `docs/api-examples.md` for REST and gRPC usage examples.
 See `docs/testing.md` for the testing strategy.
 See `docs/demo.md` for demo scenarios.
 See `docs/runbook.md` for operations and troubleshooting.
+See `docs/security.md` for authentication and authorization overview.
 
 ## Technology Justification
 
