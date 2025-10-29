@@ -225,3 +225,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Documented step-by-step flows for REST, gRPC, Kinesis, and observability.
 - Order/Priority: Added after APIs and infrastructure steps were documented.
 - Details: [docs/change-log-detailed/CL-0028.md](change-log-detailed/CL-0028.md)
+
+## CL-0029 - Update audit schema documentation
+
+- Why: Keep docs aligned with the expanded audit log model.
+- What: Added the audit log details field to UML and SQL schema docs.
+- How: Updated UML class diagram and SQL schema snippet in README.
+- Order/Priority: Added after audit logging implementation to prevent doc drift.
+- Details: [docs/change-log-detailed/CL-0029.md](change-log-detailed/CL-0029.md)

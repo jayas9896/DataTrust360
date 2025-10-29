@@ -115,7 +115,8 @@ CREATE TABLE audit_log (
   tenant_id BIGINT,
   actor TEXT,
   action TEXT,
-  occurred_at TIMESTAMP
+  occurred_at TIMESTAMP,
+  details TEXT
 );
 ```
 

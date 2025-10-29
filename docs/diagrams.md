@@ -78,6 +78,7 @@ classDiagram
     +String actor
     +String action
     +Instant occurredAt
+    +String details
   }
   class EventDocument {
     +String id
