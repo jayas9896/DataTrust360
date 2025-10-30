@@ -241,3 +241,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Added audit endpoint reference and updated action name and config hints.
 - Order/Priority: Updated after OpenAI integration and audit endpoint were added.
 - Details: [docs/change-log-detailed/CL-0030.md](change-log-detailed/CL-0030.md)
+
+## CL-0031 - Add operations runbook
+
+- Why: Provide a practical guide for running and troubleshooting the platform.
+- What: Added a runbook document and linked it from the README.
+- How: Documented Docker Compose, Kubernetes steps, and troubleshooting tips.
+- Order/Priority: Added after demo scenarios so operational guidance is aligned with usage.
+- Details: [docs/change-log-detailed/CL-0031.md](change-log-detailed/CL-0031.md)

@@ -20,6 +20,7 @@ See `docs/commit-log.md` for sequential commit learning notes.
 See `docs/api-examples.md` for REST and gRPC usage examples.
 See `docs/testing.md` for the testing strategy.
 See `docs/demo.md` for demo scenarios.
+See `docs/runbook.md` for operations and troubleshooting.
 
 ## Technology Justification
 
