@@ -257,3 +257,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Documented public access, RBAC, OAuth2, SAML, and resource server notes.
 - Order/Priority: Added after core security configuration was in place.
 - Details: [docs/change-log-detailed/CL-0032.md](change-log-detailed/CL-0032.md)
+
+## CL-0033 - Add architecture deep dive doc
+
+- Why: Provide a cohesive narrative of service responsibilities and data flow.
+- What: Added an architecture deep dive document and linked it from the README.
+- How: Documented service roles, data flow, and expanded tech justification.
+- Order/Priority: Added after core pipeline docs to consolidate the architecture view.
+- Details: [docs/change-log-detailed/CL-0033.md](change-log-detailed/CL-0033.md)

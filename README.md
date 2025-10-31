@@ -22,6 +22,7 @@ See `docs/testing.md` for the testing strategy.
 See `docs/demo.md` for demo scenarios.
 See `docs/runbook.md` for operations and troubleshooting.
 See `docs/security.md` for authentication and authorization overview.
+See `docs/architecture.md` for a deeper architecture and data flow explanation.
 
 ## Technology Justification
 
