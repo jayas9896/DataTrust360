@@ -265,3 +265,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Documented service roles, data flow, and expanded tech justification.
 - Order/Priority: Added after core pipeline docs to consolidate the architecture view.
 - Details: [docs/change-log-detailed/CL-0033.md](change-log-detailed/CL-0033.md)
+
+## CL-0034 - Expand prompt template requirements
+
+- Why: Ensure the template enforces Agile delivery, architecture coverage, and recruiter-ready framing.
+- What: Added Agile/Scrum delivery, architecture requirements, and demo scenario expectations to the template.
+- How: Extended delivery, process, and definition of done sections with new requirements.
+- Order/Priority: Added after the base template stabilized to capture remaining expectations.
+- Details: [docs/change-log-detailed/CL-0034.md](change-log-detailed/CL-0034.md)

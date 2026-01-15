@@ -58,6 +58,7 @@ Delivery Format (Mandatory):
 - Observability integration (Prometheus, Grafana)
 - OpenAI insight feature (prompting + flows)
 - Final README for users + demo scenarios
+- Agile/Scrum artifacts (backlog, milestones, sprint plans, integration order)
 
 Engineering Standards (Mandatory):
 
@@ -79,6 +80,7 @@ Process Rules (Mandatory):
 - Keep all examples runnable and consistent with configuration.
 - Avoid destructive commands and never remove user work unless explicitly asked.
 - Maintain ASCII text unless the file already uses Unicode.
+- Deliver in Agile/Scrum form with backlog, milestones, sprint plans, and integration order.
 
 Project Setup Placeholders:
 
@@ -96,6 +98,8 @@ Non-Functional Requirements:
 - Observability: metrics for throughput, latency, queue depth.
 - Scalability: partitioning keys and stream separation documented.
 - Compliance: audit logging for security and insights.
+- Architecture must explicitly address multi-tenancy, failure modes, backpressure, scaling, and security boundary definitions.
+- Project domain must be internally consistent and support realistic user flows and data models.
 
 Definition of Done:
 
@@ -106,8 +110,10 @@ Definition of Done:
 - Prometheus scrapes metrics and Grafana dashboards exist.
 - Tests cover critical services and pipelines.
 - README includes setup, usage, and demo steps.
+- Demo scenarios include failure scenarios, security scenarios, and scaling scenarios.
 - Javadoc and Checkstyle pass.
 - Commit logs are updated per CL-XXXX templates.
+- Provide a recruiter-focused one paragraph explanation of the project.
 
 SUPER PROMPT END
 
