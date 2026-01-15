@@ -1,6 +1,4 @@
-# Project Super Prompt Template
-
-Use this template to create a new enterprise-grade project with consistent engineering standards. Replace placeholders wrapped in [ ] or { }.
+# HeritageGraph360 Prompt (Filled Example)
 
 SUPER PROMPT BEGIN
 
@@ -8,23 +6,26 @@ You are helping me design, scaffold, and implement an enterprise-grade engineeri
 Spring Boot, Spring MVC, Spring Security (public access + role-based access + OAuth2 + SAML), Hibernate, SQL, NoSQL, REST, Swagger/OpenAPI, gRPC, Kafka, Kinesis, RabbitMQ, JUnit, Git, Maven, Docker, Grafana, Prometheus, Local Kubernetes, UML for architecture diagrams, and optionally OpenAI APIs.
 
 Project Concept (Do Not Change Structure):
-"[PROJECT_NAME] - [ONE_LINE_DESCRIPTION]"
+"HeritageGraph360 - A secure, multi-tenant genealogy and records verification platform that ingests historical sources, unifies identities, and generates auditable lineage insights."
 
 Idea Placeholders:
-- Domain: [DOMAIN]
-- Primary users: [PRIMARY_USERS]
-- Core capabilities: [KEY_CAPABILITIES]
-- Data sources: [DATA_SOURCES]
-- Anomaly/insight goal: [ANOMALY_GOAL]
-- Tenant identifier format: [TENANT_ID_FORMAT]
-- Domain-specific rules: [DOMAIN_RULES]
-
-Example placeholder:
-"[PROJECT_NAME] - A secure, multi-tenant [DOMAIN] platform that [KEY_CAPABILITIES]."
-
-Domain Insert Example (replace with your idea):
-- [DOMAIN_RULES] should capture unique data governance, privacy, and workflow rules
-- Use clear field-level visibility rules and claim/merge lifecycle details
+- Domain: Genealogy, lineage verification, family graph management
+- Primary users: Individuals, family administrators, historical archives, research institutions
+- Core capabilities: Profile creation/claim, relationship graph, evidence ingestion, conflict resolution, audit trails, insights
+- Data sources: User-submitted records, archive imports, partner datasets, scanned documents
+- Anomaly/insight goal: Identify duplicate profiles, conflicting records, and lineage gaps
+- Tenant identifier format: org-{region}-{id}
+- Domain-specific rules:
+  - Every person profile requires a unique email or phone number at creation.
+  - Profiles start as unclaimed; once claimed, changes require approval or merge workflow.
+  - Field-level visibility is controlled by hierarchy and explicit per-person grants.
+  - Person records are private by default; public visibility is opt-in only.
+  - Merges must preserve provenance and anonymize contributor identities.
+  - Relationship status is bi-directional with visible state (green/yellow/orange/red).
+  - Sensitive fields (medical history, financial cards) are stored under enhanced encryption and access control.
+  - Duplicate detection uses 90% name similarity plus shared email or phone, with a staged merge process.
+  - Admin review required for high-impact updates (e.g., caste, name after marriage).
+  - Alias names, secondary phones, and emails are supported and can be primary for others.
 
 Non-Negotiable Requirements (Mandatory):
 
@@ -90,12 +91,12 @@ Process Rules (Mandatory):
 
 Project Setup Placeholders:
 
-- Repo directory name: [REPO_DIR_NAME]
-- Package root: [JAVA_PACKAGE]
-- Maven groupId: [MAVEN_GROUP_ID]
-- Maven artifactId: [MAVEN_ARTIFACT_ID]
-- Service ports: [SERVICE_PORTS]
-- Environments: [ENVIRONMENTS]
+- Repo directory name: HeritageGraph360
+- Package root: com.heritagegraph360
+- Maven groupId: com.heritagegraph360
+- Maven artifactId: heritagegraph360-parent
+- Service ports: 8080-8086
+- Environments: local, dev, qa, prod
 
 Non-Functional Requirements:
 
@@ -121,8 +122,8 @@ Definition of Done:
 - Commit logs are updated per CL-XXXX templates.
 - Provide a recruiter-focused one paragraph explanation of the project.
 
-SUPER PROMPT END
+Recruiter-Focused One-Paragraph Summary:
 
-Notes:
-- Replace all placeholders before use.
-- Keep this template in the repo and reuse for future projects.
+HeritageGraph360 is a secure, enterprise-grade genealogy and lineage verification platform that unifies identity data from modern users and historical archives, processes high-volume record streams with resilient pipelines, and delivers auditable insights for researchers and institutions. It demonstrates multi-tenant security, OAuth2/SAML federation, streaming and async processing, and a rigorous documentation and testing discipline while remaining practical to deploy locally with Docker and Kubernetes.
+
+SUPER PROMPT END

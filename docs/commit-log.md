@@ -282,6 +282,14 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - Order/Priority: Added after confirming commit log requirements are present.
 - Details: [docs/change-log-detailed/CL-0035.md](change-log-detailed/CL-0035.md)
 
+## CL-0036 - Add HeritageGraph360 prompt implementation
+
+- Why: Provide a fully contextualized example prompt for a family tree domain.
+- What: Added a filled prompt template and expanded domain placeholders in the base template.
+- How: Included domain-specific rules and a recruiter-focused paragraph in the implementation file.
+- Order/Priority: Added after the prompt template stabilized to avoid rework.
+- Details: [docs/change-log-detailed/CL-0036.md](change-log-detailed/CL-0036.md)
+
 ## CL-0036 - Split README into product and tech details
 
 - Why: Make the main README an advertising-style overview while keeping technical details accessible.
