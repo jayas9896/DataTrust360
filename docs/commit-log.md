@@ -273,3 +273,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Extended delivery, process, and definition of done sections with new requirements.
 - Order/Priority: Added after the base template stabilized to capture remaining expectations.
 - Details: [docs/change-log-detailed/CL-0034.md](change-log-detailed/CL-0034.md)
+
+## CL-0035 - Emphasize frequent commits in prompt template
+
+- Why: Make commit frequency explicit to reinforce incremental, reviewable progress.
+- What: Added a requirement to commit frequently at logical milestones.
+- How: Updated the engineering standards section in the prompt template.
+- Order/Priority: Added after confirming commit log requirements are present.
+- Details: [docs/change-log-detailed/CL-0035.md](change-log-detailed/CL-0035.md)

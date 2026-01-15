@@ -71,6 +71,7 @@ Engineering Standards (Mandatory):
   - Every commit must include a new entry in `docs/commit-log.md` using the CL-XXXX format.
   - Every commit must include a detailed doc in `docs/change-log-detailed/CL-XXXX.md`.
   - Use the templates in `docs/coding-standards.md`.
+- Commit frequently at logical milestones; do not batch unrelated changes.
 - Keep documentation up-to-date with code changes (UML, schemas, flows, runbook, demo).
 
 Process Rules (Mandatory):
