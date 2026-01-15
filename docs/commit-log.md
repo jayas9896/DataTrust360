@@ -281,3 +281,11 @@ This log uses sequential IDs so each entry can be documented in the same commit.
 - How: Updated the engineering standards section in the prompt template.
 - Order/Priority: Added after confirming commit log requirements are present.
 - Details: [docs/change-log-detailed/CL-0035.md](change-log-detailed/CL-0035.md)
+
+## CL-0036 - Split README into product and tech details
+
+- Why: Make the main README an advertising-style overview while keeping technical details accessible.
+- What: Added a product-focused README section and moved tech content to `README-tech.md`.
+- How: Rewrote `README.md` and created `README-tech.md` with the prior technical sections.
+- Order/Priority: Added after the product prompt template was finalized to align presentation.
+- Details: [docs/change-log-detailed/CL-0036.md](change-log-detailed/CL-0036.md)
